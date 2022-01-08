@@ -1,0 +1,16 @@
+.btn {
+  font-weight: var(--font-weight-medium);
+  padding: 0.5em 1.5em;
+  border-radius: 2em;
+  border: 2px solid var(--grey-500);
+  background-color: white;
+  transition: all var(--speed);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: black;
+    border-color: black;
+    color: white;
+  }
+}

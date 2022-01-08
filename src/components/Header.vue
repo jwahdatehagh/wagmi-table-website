@@ -1,11 +1,6 @@
 <template>
   <header>
-    <div>
-      <NFT :token-id="0" name="Wagmi" />
-    </div>
-    <h1>
-      <span class="sr-only">Wagmi</span> - Table
-    </h1>
+    <NFT :token-id="0" name="Wagmi" />
   </header>
 </template>
 
@@ -18,17 +13,8 @@ import NFT from './NFT.vue'
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    margin-bottom: 4rem;
-
-    > div {
-      width: 12rem;
-    }
-
-    > h1 {
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-bold);
-      margin-left: 1rem;
-    }
+    padding: 5rem 1rem 3rem;
+    width: 16rem;
+    margin: 0 auto;
   }
 </style>

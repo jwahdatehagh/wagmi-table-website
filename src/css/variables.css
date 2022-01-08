@@ -5,10 +5,16 @@
   --font-size-base: 1rem;
   --font-size-lg: 2rem;
 
+  --font-weight-light: 300;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
   /* COLORS */
   --beige: #FEEDDB;
+  --grey-200: #CACACA;
+  --grey-500: #E6E6E6;
+  --grey-800: #696969;
 
+  /* ANIMATIONS */
+  --speed: 0.4s;
 }
