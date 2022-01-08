@@ -8,7 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "postcss-mixins": "^8.1.0",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^6.7.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
