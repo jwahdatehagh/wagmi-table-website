@@ -19,5 +19,9 @@ import nfts from './../store/nfts'
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(14, minmax(0, 1fr));
+
+  > *:nth-child(2) {
+    grid-column: 14;
+  }
 }
 </style>
