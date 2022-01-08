@@ -1,3 +1,14 @@
 #app {
+  position: relative;
+  max-width: 120rem;
+  margin: 0 auto;
   padding: 1rem;
+
+  @media (--md) {
+    padding: 1rem 2rem;
+  }
+
+  @media (--xl) {
+    padding: 1rem 4rem;
+  }
 }

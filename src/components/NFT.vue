@@ -23,6 +23,7 @@ export default {
     width: 100%;
     padding-bottom: 100%;
     position: relative;
+    overflow: hidden;
   }
 
   article {

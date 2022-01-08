@@ -60,15 +60,28 @@ button {
       font-size: var(--font-size-sm);
       color: var(--grey-800);
       margin-top: -0.25em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:--highlight {
     strong + span {
       color: var(--grey-200);
     }
+  }
+
+  @media (--max-md) {
+    max-width: 8rem;
+  }
+
+  @media (--md) {
+    right: 2rem;
+  }
+
+  @media (--xl) {
+    right: 4rem;
   }
 }
 </style>

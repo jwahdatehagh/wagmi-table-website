@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import postcssCustomMedia from 'postcss-custom-media'
+import postcssCustomSelectors from 'postcss-custom-selectors'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,17 +11,17 @@ export default defineConfig({
       plugins: [
         require('postcss-nested'),
         require('autoprefixer'),
+        postcssCustomSelectors({
+          importFrom: 'src/css/custom-selectors.css',
+        }),
+        postcssCustomMedia({
+          importFrom: 'src/css/custom-media.css',
+        }),
         require('postcss-preset-env', {
           stage: 3,
           features: {},
         }),
-        require('postcss-custom-selectors', {
-          importFrom: 'src/css/custom-selectors.css',
-        }),
-        require('postcss-custom-media', {
-          importFrom: 'src/css/custom-media.css',
-        }),
-      ]
+      ],
     },
   }
 })

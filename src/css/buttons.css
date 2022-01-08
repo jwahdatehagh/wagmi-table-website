@@ -6,9 +6,7 @@
   background-color: white;
   transition: all var(--speed);
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:--highlight {
     background-color: black;
     border-color: black;
     color: white;
