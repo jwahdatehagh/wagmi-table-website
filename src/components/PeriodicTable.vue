@@ -13,3 +13,11 @@
 import NFT from './NFT.vue'
 import nfts from './../store/nfts'
 </script>
+
+<style lang="postcss" scoped>
+.periodic-table {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(14, minmax(0, 1fr));
+}
+</style>
