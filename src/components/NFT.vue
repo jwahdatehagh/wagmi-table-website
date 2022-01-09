@@ -28,9 +28,24 @@
       </h1>
       <p class="description">{{ description }}</p>
 
-      <p class="price">0.2 Ξ</p>
+      <p v-if="owner" class="owner">
+        Owned by
+        <a :href="`https://etherscan.io/address/${owner}`" target="_blank">{{ shortOwner }}</a>
+      </p>
 
-      <button class="btn btn-primary btn-block">Mint</button>
+      <p v-if="! minted" class="price">0.2 Ξ</p>
+
+      <button
+        v-if="! minting && ! minted"
+        @click="mint"
+        class="btn btn-primary btn-block"
+      >Mint</button>
+      <button
+        v-else-if="minting"
+        class="btn btn-primary btn-block"
+        disabled
+      >Minting</button>
+
     </div>
   </Modal>
 </div>
@@ -38,6 +53,8 @@
 
 <script>
 import { VueFinalModal } from 'vue-final-modal'
+import shortAddress from '../helpers/short-address'
+import { state } from './../store'
 
 export default {
   components: {
@@ -54,12 +71,34 @@ export default {
   data () {
     return {
       showDetail: false,
+      owner: null,
+      minted: null,
     }
+  },
+
+  computed: {
+    wallet () { return state.wallet },
+    address () { return this.wallet?.state.address },
+    minting () { return this.wallet?.state.minting },
+    shortOwner () { return this.owner && shortAddress(this.owner) }
   },
 
   methods: {
     open () {
       this.showDetail = true
+
+      this.checkTokenMintStatus()
+    },
+
+    async checkTokenMintStatus () {
+      this.owner = await state.contract.ownerOf(this.tokenId)
+      this.minted = this.owner > 0
+    },
+
+    async mint () {
+      state.contract = await this.wallet.ensureSigned(state.contract)
+      await this.wallet.mint(this.tokenId)
+      this.checkTokenMintStatus()
     }
   },
 }

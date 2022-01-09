@@ -30,7 +30,7 @@ export default {
 
   methods: {
     async connect () {
-      console.log('Trying to connect')
+      console.log('Trying to connect', state.wallet)
       await state.wallet.connect()
     }
   }

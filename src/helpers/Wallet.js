@@ -181,10 +181,15 @@ export default class Wallet {
    * Ensure that the contract has a signer.
    */
   async ensureSigned (contract) {
+    console.log('contract signer', contract.signer, contract)
+    console.log('wallet signer', this.provider.getSigner())
+
     if (! contract.signer) {
       // Connect to the wallet so we can call state changing methods
-      await contract.connect(this.provider.getSigner())
+      return await contract.connect(this.provider.getSigner())
     }
+
+    return contract
   }
 
   /**

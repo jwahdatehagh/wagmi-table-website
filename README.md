@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# WAGMI-TABLE
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## SETUP
 
-## Recommended IDE Setup
+- `yarn`
+- `yarn dev`
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## TODOS
+
+- [ ] Integrate Site with Contract
+  - [x] Connect to the contract
+  - [ ] Get price for token
+  - [ ] Check when the sale starts
+  - [x] Mint a token
+    - [ ] only after sale starts
+  - [x] Get the current owner for a token
+  - [ ] Display the ENS domain of the current owner of a token
+- [ ] ...
