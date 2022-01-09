@@ -1,522 +1,170 @@
 export default [
   {
+    id: 0,
+    name: 'Wagmi',
+    description: 'we all gonna make it',
+    group: 'slang'
+  },
+  {
     id: 1,
-    name: 'GM'
+    name: 'Gm',
+    description: 'good morning',
+    group: 'slang'
   },
   {
     id: 2,
-    name: 'GN'
+    name: 'Gn',
+    description: 'good night',
+    group: 'slang'
   },
   {
     id: 3,
     name: 'Dev',
+    description: 'code wizard',
+    group: 'slang'
   },
   {
     id: 4,
     name: 'Goat',
+    description: 'token of acclaim',
+    group: 'slang'
   },
   {
     id: 5,
-    name: 'Alpha',
+    name: 'Ape',
+    description: 'to buy without thought',
+    group: 'slang'
   },
   {
     id: 6,
-    name: 'Fren',
+    name: 'Dh',
+    description: 'diamond hands never sell',
+    group: 'slang'
   },
   {
     id: 7,
-    name: 'Mam',
+    name: 'Up',
+    description: 'Up only',
+    group: 'slang'
   },
   {
     id: 8,
-    name: 'Ser',
+    name: 'Btc',
+    description: 'digital gold',
+    group: 'tech'
   },
   {
     id: 9,
-    name: 'Ape',
+    name: 'Eth',
+    description: 'world computer',
+    group: 'tech'
   },
   {
     id: 10,
-    name: 'Dgn',
+    name: 'Ens',
+    description: 'web 3 username',
+    group: 'tech'
   },
   {
     id: 11,
-    name: 'Whale',
+    name: 'Doge',
+    description: 'dogecoin',
+    group: 'tech'
   },
   {
     id: 12,
-    name: 'Bull',
+    name: 'Meme',
+    description: 'a viral idea',
+    group: 'tech'
   },
   {
     id: 13,
-    name: 'Bear',
+    name: 'Cco',
+    description: 'creative commons',
+    group: 'tech'
   },
   {
     id: 14,
-    name: 'Noob',
+    name: 'Fnd',
+    description: 'foundation',
+    group: 'tech'
   },
   {
     id: 15,
-    name: 'Dh',
+    name: 'Ab',
+    description: 'art blocks',
+    group: 'tech'
   },
   {
     id: 16,
-    name: 'Qn',
+    name: 'Co',
+    description: 'collection of work',
+    group: 'art'
   },
   {
     id: 17,
-    name: 'Kng',
+    name: 'Qn',
+    description: 'token of admiration',
+    group: 'slang'
   },
   {
     id: 18,
-    name: 'Ph',
+    name: 'Whale',
+    description: 'person of great wealth',
+    group: 'slang'
   },
   {
     id: 19,
-    name: 'Maxi',
+    name: 'Sudo',
+    description: 'a self-given name',
+    group: 'slang'
   },
   {
     id: 20,
-    name: 'Sudo',
+    name: 'Noob',
+    description: 'a new person',
+    group: 'slang'
   },
   {
     id: 21,
-    name: 'Moon',
+    name: 'Drop',
+    description: 'new stuff',
+    group: 'slang'
   },
   {
     id: 22,
-    name: 'Mcd',
+    name: 'Sats',
+    description: 'bitcoin atoms',
+    group: 'tech'
   },
   {
     id: 23,
-    name: 'Wen',
+    name: 'Wei',
+    description: 'tiny ether',
+    group: 'tech'
   },
   {
     id: 24,
-    name: 'Up',
+    name: 'Sc',
+    description: 'smart contract',
+    group: 'tech'
   },
   {
     id: 25,
-    name: 'Drop',
+    name: 'Block',
+    description: 'a measure of time',
+    group: 'tech'
   },
   {
     id: 26,
-    name: 'Ok',
+    name: 'Sup',
+    description: 'supply of stuff',
+    group: 'tech'
   },
   {
     id: 27,
-    name: 'Irl',
-  },
-  {
-    id: 28,
-    name: 'Mv',
-  },
-  {
-    id: 29,
-    name: 'Mt',
-  },
-  {
-    id: 30,
-    name: 'Ngmi',
-  },
-  {
-    id: 31,
-    name: 'Co',
-  },
-  {
-    id: 32,
-    name: 'Egg',
-  },
-  {
-    id: 33,
-    name: 'Pfp',
-  },
-  {
-    id: 34,
-    name: 'Cp',
-  },
-  {
-    id: 35,
-    name: 'Ll',
-  },
-  {
-    id: 36,
-    name: 'Bayc',
-  },
-  {
-    id: 37,
-    name: 'Ps',
-  },
-  {
-    id: 38,
-    name: 'Dao',
-  },
-  {
-    id: 39,
-    name: 'Cm',
-  },
-  {
-    id: 40,
-    name: 'Twtr',
-  },
-  {
-    id: 41,
-    name: 'Wei',
-  },
-  {
-    id: 42,
-    name: 'Eth',
-  },
-  {
-    id: 43,
-    name: 'Ab',
-  },
-  {
-    id: 44,
-    name: 'Nft ',
-  },
-  {
-    id: 45,
-    name: 'Erc',
-  },
-  {
-    id: 46,
-    name: 'Eip',
-  },
-  {
-    id: 47,
-    name: 'Ft',
-  },
-  {
-    id: 48,
-    name: 'Sca',
-  },
-  {
-    id: 49,
-    name: 'W',
-  },
-  {
-    id: 50,
-    name: 'Sol',
-  },
-  {
-    id: 51,
-    name: 'Cco',
-  },
-  {
-    id: 52,
-    name: 'Gas',
-  },
-  {
-    id: 53,
-    name: 'Mng',
-  },
-  {
-    id: 54,
-    name: 'Sats',
-  },
-  {
-    id: 55,
-    name: 'Btc',
-  },
-  {
-    id: 56,
-    name: 'De',
-  },
-  {
-    id: 57,
-    name: 'Sc',
-  },
-  {
-    id: 58,
-    name: 'B',
-  },
-  {
-    id: 59,
-    name: 'Nd',
-  },
-  {
-    id: 60,
-    name: 'Dapp',
-  },
-  {
-    id: 61,
-    name: 'Jpg',
-  },
-  {
-    id: 62,
-    name: 'Svg',
-  },
-  {
-    id: 63,
-    name: 'Addy',
-  },
-  {
-    id: 64,
-    name: 'Li',
-  },
-  {
-    id: 65,
-    name: 'F',
-  },
-  {
-    id: 66,
-    name: 'Frk',
-  },
-  {
-    id: 67,
-    name: 'S',
-  },
-  {
-    id: 68,
-    name: 'Www',
-  },
-  {
-    id: 69,
-    name: 'Ptp',
-  },
-  {
-    id: 70,
-    name: 'Dc',
-  },
-  {
-    id: 71,
-    name: 'Lg',
-  },
-  {
-    id: 72,
-    name: 'Ut',
-  },
-  {
-    id: 73,
-    name: 'Mm',
-  },
-  {
-    id: 74,
-    name: 'Rm',
-  },
-  {
-    id: 75,
     name: 'Pk',
-  },
-  {
-    id: 76,
-    name: 'Tx',
-  },
-  {
-    id: 77,
-    name: 'Mint',
-  },
-  {
-    id: 78,
-    name: 'Ro',
-  },
-  {
-    id: 79,
-    name: 'Pow',
-  },
-  {
-    id: 80,
-    name: 'Air',
-  },
-  {
-    id: 81,
-    name: 'Doge',
-  },
-  {
-    id: 82,
-    name: 'Tok',
-  },
-  {
-    id: 83,
-    name: 'Os',
-  },
-  {
-    id: 84,
-    name: 'Cn',
-  },
-  {
-    id: 85,
-    name: 'Ens',
-  },
-  {
-    id: 86,
-    name: 'Dex',
-  },
-  {
-    id: 87,
-    name: 'Sup',
-  },
-  {
-    id: 88,
-    name: 'Bot',
-  },
-  {
-    id: 89,
-    name: 'Pos',
-  },
-  {
-    id: 90,
-    name: 'Meme',
-  },
-  {
-    id: 91,
-    name: 'Fnd',
-  },
-  {
-    id: 92,
-    name: 'Fct',
-  },
-  {
-    id: 93,
-    name: 'Lgr',
-  },
-  {
-    id: 94,
-    name: 'V',
-  },
-  {
-    id: 95,
-    name: 'Nia',
-  },
-  {
-    id: 96,
-    name: 'Szn',
-  },
-  {
-    id: 97,
-    name: 'Dip',
-  },
-  {
-    id: 98,
-    name: 'Ath',
-  },
-  {
-    id: 99,
-    name: 'Roi',
-  },
-  {
-    id: 100,
-    name: 'Free',
-  },
-  {
-    id: 101,
-    name: 'Blc',
-  },
-  {
-    id: 102,
-    name: 'Otc',
-  },
-  {
-    id: 103,
-    name: 'Fiat',
-  },
-  {
-    id: 104,
-    name: 'Cop',
-  },
-  {
-    id: 105,
-    name: 'Hodl',
-  },
-  {
-    id: 106,
-    name: 'Lfg',
-  },
-  {
-    id: 107,
-    name: 'Pwn',
-  },
-  {
-    id: 108,
-    name: 'Btd',
-  },
-  {
-    id: 109,
-    name: 'Rkt',
-  },
-  {
-    id: 110,
-    name: 'Flp',
-  },
-  {
-    id: 111,
-    name: 'Stl',
-  },
-  {
-    id: 112,
-    name: 'Dyor',
-  },
-  {
-    id: 113,
-    name: 'In',
-  },
-  {
-    id: 114,
-    name: 'Lr',
-  },
-  {
-    id: 115,
-    name: 'Few',
-  },
-  {
-    id: 116,
-    name: 'Pn',
-  },
-  {
-    id: 117,
-    name: 'Hype',
-  },
-  {
-    id: 118,
-    name: 'Og ',
-  },
-  {
-    id: 119,
-    name: 'Snap',
-  },
-  {
-    id: 120,
-    name: 'Yk',
-  },
-  {
-    id: 121,
-    name: 'Sel',
-  },
-  {
-    id: 122,
-    name: 'R',
-  },
-  {
-    id: 123,
-    name: 'Fud',
-  },
-  {
-    id: 124,
-    name: 'Vibe',
-  },
-  {
-    id: 125,
-    name: 'Ded',
-  },
-  {
-    id: 126,
-    name: 'Shill',
-  },
-  {
-    id: 127,
-    name: 'Rug',
-  },
-  {
-    id: 128,
-    name: 'Hope',
-  },
-  {
-    id: 129,
-    name: 'Cope',
-  },
-  {
-    id: 130,
-    name: 'Ps',
+    description: 'a key you keep private',
+    group: 'tech'
   },
 ]

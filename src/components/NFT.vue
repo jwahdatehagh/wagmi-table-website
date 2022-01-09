@@ -5,7 +5,7 @@
       <img :src="`/images/${tokenId}@sm.png`" :alt="`#${tokenId} ${name}`">
       <p>{{ tokenId }}</p>
       <h1>{{ name }}</h1>
-      <p>description</p>
+      <p>{{ description }}</p>
     </article>
   </div>
 
@@ -26,6 +26,8 @@
         <!-- <small>#{{ tokenId }}</small> -->
         {{ name }}
       </h1>
+      <p class="description">{{ description }}</p>
+
       <p class="price">0.2 Ξ</p>
 
       <button class="btn btn-primary btn-block">Mint</button>
@@ -45,6 +47,8 @@ export default {
   props: {
     tokenId: Number,
     name: String,
+    description: String,
+    group: String,
   },
 
   data () {
@@ -169,6 +173,10 @@ export default {
           font-size: var(--font-size-sm);
           margin-bottom: -0.5em;
         }
+      }
+
+      p.description {
+        margin: -2rem 0 1rem;
       }
 
       p.price {
