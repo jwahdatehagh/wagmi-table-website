@@ -1,6 +1,7 @@
 <template>
 <div>
   <article>
+    <img :src="`/images/${tokenId}@sm.png`" :alt="`#${tokenId} ${name}`">
     <p>{{ tokenId }}</p>
     <h1>{{ name }}</h1>
     <p>description</p>
@@ -23,7 +24,6 @@ export default {
     width: 100%;
     padding-bottom: 100%;
     position: relative;
-    overflow: hidden;
   }
 
   article {
@@ -31,6 +31,10 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--beige-dark);
+    border-radius: 0.15rem;
 
     position: absolute;
     top: 0;
@@ -41,9 +45,25 @@ export default {
     text-align: center;
     padding: 1rem;
     box-shadow: 0 0.2rem 0.15rem -0.1rem rgba(0, 0, 0, 0.1);
+    transition: all var(--speed-fast);
+
+    &:--highlight {
+      transform: scale(0.975);
+      box-shadow: 0 0.1rem 0.1rem -0.05rem rgba(0, 0, 0, 0.06);
+    }
 
     * {
       width: 100%;
+    }
+
+    img {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--beige);
     }
 
     p {

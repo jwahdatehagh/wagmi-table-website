@@ -11,10 +11,12 @@
 
   /* COLORS */
   --beige: #FEEDDB;
+  --beige-dark: #EADBCD;
   --grey-200: #CACACA;
   --grey-500: #E6E6E6;
   --grey-800: #696969;
 
   /* ANIMATIONS */
   --speed: 0.4s;
+  --speed-fast: 0.15s;
 }

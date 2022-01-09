@@ -43,6 +43,7 @@ button {
   top: 1rem;
   right: 1rem;
   z-index: 100;
+  max-width: 30vw;
 
   strong:first-child {
     display: flex;
