@@ -1,4 +1,12 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
 #app {
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: auto;
   position: relative;
   max-width: 120rem;
   margin: 0 auto;
@@ -11,4 +19,8 @@
   @media (--xl) {
     padding: 1rem 4rem;
   }
+}
+
+.vfm {
+  height: 100vh !important;
 }

@@ -63,13 +63,5 @@ import nfts from './../store/nfts'
       grid-column: 14;
     }
   }
-
-  @media (--xxxl) {
-    grid-template-columns: repeat(14, minmax(0, 1fr));
-
-    > *:nth-child(2) {
-      grid-column: 14;
-    }
-  }
 }
 </style>

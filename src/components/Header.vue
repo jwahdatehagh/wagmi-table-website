@@ -15,15 +15,17 @@ import NFT from './NFT.vue'
     align-items: center;
     padding: 5rem 1rem 6rem;
     margin: 0 auto;
-    width: 16rem;
 
     @media (--md) {
       padding: 5rem 1rem 3rem;
     }
 
-    @media (--xxl) {
-      width: 12vw;
-      width: 20rem;
+    > :deep(*) {
+      width: 16rem;
+
+      @media (--xxl) {
+        width: 20rem;
+      }
     }
   }
 </style>

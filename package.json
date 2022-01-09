@@ -12,7 +12,8 @@
     "postcss-mixins": "^8.1.0",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^6.7.0",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-final-modal": "^3.4.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
