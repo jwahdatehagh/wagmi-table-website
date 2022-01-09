@@ -28,12 +28,16 @@
       </h1>
       <p class="description">{{ description }}</p>
 
-      <p v-if="owner" class="owner">
-        Owned by
-        <a :href="`https://etherscan.io/address/${owner}`" target="_blank">{{ shortOwner }}</a>
-      </p>
+      <div v-if="minted" class="links">
+        <a :href="etherscanUrl" target="_blank" class="owner btn btn-block">Owned by {{ shortOwner }}</a>
 
-      <p v-if="! minted" class="price">0.2 Ξ</p>
+        <a
+          :href="openSeaUrl"
+          target="_blank"
+          class="opensea btn btn-block"
+        >View on OpenSea</a>
+      </div>
+      <p v-else class="price">{{ priceInETH }} Ξ</p>
 
       <button
         v-if="! minting && ! minted"
@@ -45,6 +49,9 @@
         class="btn btn-primary btn-block"
         disabled
       >Minting</button>
+      <p v-if="! saleStarted && ! minted" class="sale-start">
+        Sale starts {{ saleStart }}
+      </p>
 
     </div>
   </Modal>
@@ -52,9 +59,13 @@
 </template>
 
 <script>
+import { ethers } from 'ethers'
 import { VueFinalModal } from 'vue-final-modal'
+import { checkENS } from '../helpers/ens'
 import shortAddress from '../helpers/short-address'
-import { state } from './../store'
+import { state, saleStarted } from './../store'
+
+const DEFAULT_PRICE = ethers.utils.parseEther('0.2')
 
 export default {
   components: {
@@ -72,33 +83,61 @@ export default {
     return {
       showDetail: false,
       owner: null,
+      ownerEns: null,
       minted: null,
+      price: DEFAULT_PRICE,
     }
   },
 
   computed: {
+    // Wallet state
     wallet () { return state.wallet },
     address () { return this.wallet?.state.address },
     minting () { return this.wallet?.state.minting },
-    shortOwner () { return this.owner && shortAddress(this.owner) }
+
+    // Token state
+    saleStart () { return (new Date(state.saleStart * 1000)).toLocaleString() },
+    saleStarted () { return saleStarted() },
+    priceInETH () { return ethers.utils.formatEther(this.price) },
+    shortOwner () { return this.owner && shortAddress(this.owner) },
+    ownerDisplay () { return this.ownerEns || this.shortOwner },
+
+    // Links
+    etherscanUrl () {
+      return `${import.meta.env.VITE_ETHERSCAN_URL}/address/${this.owner}`
+    },
+    openSeaUrl () {
+      const openSea = import.meta.env.VITE_OPENSEA_URL
+      const contract = import.meta.env.VITE_WAGMI_TABLE_CONTRACT
+
+      return `${openSea}/assets/${contract}/${this.tokenId}`
+    },
   },
 
   methods: {
     open () {
       this.showDetail = true
-
-      this.checkTokenMintStatus()
+      this.checkTokenStatus()
     },
 
-    async checkTokenMintStatus () {
-      this.owner = await state.contract.ownerOf(this.tokenId)
-      this.minted = this.owner > 0
+    async checkTokenStatus () {
+      try {
+        this.owner = await state.contract.ownerOf(this.tokenId)
+        this.ownerEns = await checkENS(this.owner)
+        this.minted = true
+      } catch (e) {
+        this.owner = 0
+        this.minted = false
+
+        const price = await state.contract.priceForToken(this.tokenId)
+        this.price = price > 0 ? price : DEFAULT_PRICE
+      }
     },
 
     async mint () {
       state.contract = await this.wallet.ensureSigned(state.contract)
-      await this.wallet.mint(this.tokenId)
-      this.checkTokenMintStatus()
+      await this.wallet.mint(this.tokenId, this.price)
+      this.checkTokenStatus()
     }
   },
 }
@@ -189,6 +228,8 @@ export default {
     margin: 0 auto;
     padding: 1rem;
     display: grid;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: auto;
 
     > button {
       position: absolute;
@@ -201,7 +242,9 @@ export default {
       }
     }
 
-    div {
+    > div {
+      margin: 1rem 0;
+
       h1 {
         font-size: var(--font-size-lg);
         font-weight: var(--font-weight-bold);
@@ -214,18 +257,36 @@ export default {
         }
       }
 
-      p.description {
-        margin: -2rem 0 1rem;
+      .links {
+        display: grid;
+        gap: 1rem;
+        justify-content: stretch;
+        margin: 2rem 0;
       }
 
-      p.price {
+      .description {
+        margin: -1.5rem 0 1rem;
+      }
+
+      .owner {
+        margin-bottom: auto;
+      }
+
+      .price {
         font-size: var(--font-size-lg);
         font-weight: var(--font-weight-medium);
-        margin: 1rem 0;
+        margin: 1.5rem 0 2rem;
       }
 
       button {
         margin-top: 1.5rem;
+      }
+
+      .sale-start {
+        font-size: var(--font-size-sm);
+        text-align: center;
+        color: var(--grey-800);
+        margin: 0.5rem 0;
       }
     }
 
@@ -234,11 +295,11 @@ export default {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
 
-      div {
+      > div {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding: 20% 0;
+        justify-content: center;
+        padding: 0 1rem 0 0;
       }
     }
   }

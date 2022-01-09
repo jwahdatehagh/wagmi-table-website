@@ -5,8 +5,6 @@ const state = {
   minting: false,
 }
 
-const PRICE = ethers.utils.parseEther('0.2')
-
 export default class Wallet extends BaseWallet {
   constructor (globalState) {
     super(globalState, state)
@@ -16,10 +14,10 @@ export default class Wallet extends BaseWallet {
     return this._globalState.contract
   }
 
-  async mint (tokenId) {
+  async mint (tokenId, value) {
     try {
       this.minting = true
-      const transaction = await this.wagmiContract.mint(tokenId, this.state.address, { value: PRICE })
+      const transaction = await this.wagmiContract.mint(tokenId, this.state.address, { value })
       await transaction.wait()
       this.minting = false
     } catch (e) {

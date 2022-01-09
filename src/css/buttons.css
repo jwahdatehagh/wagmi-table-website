@@ -5,6 +5,8 @@
   border: 2px solid var(--grey-500);
   background-color: white;
   transition: all var(--speed);
+  display: inline-block;
+  text-align: center;
 
   &.btn-primary,
   &:--highlight {
