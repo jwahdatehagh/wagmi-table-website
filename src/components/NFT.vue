@@ -3,9 +3,6 @@
   <div class="listing">
     <article @click="open">
       <img :src="`/images/${tokenId}@sm.png`" :alt="`#${tokenId} ${name}`">
-      <p>{{ tokenId }}</p>
-      <h1>{{ name }}</h1>
-      <p>{{ description }}</p>
     </article>
   </div>
 
@@ -230,6 +227,11 @@ export default {
     display: grid;
     overflow-y: auto;
     -webkit-overflow-scrolling: auto;
+
+    img {
+      border: 1px solid var(--beige-dark);
+      border-radius: 0.15rem;
+    }
 
     > button {
       position: absolute;
