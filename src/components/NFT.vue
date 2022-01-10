@@ -139,9 +139,18 @@ export default {
     },
 
     async mint () {
-      state.contract = await this.wallet.ensureSigned(state.contract)
-      await this.wallet.mint(this.tokenId, this.price)
-      this.checkTokenStatus()
+      if (! this.wallet?.state.connected) {
+        alert(`Please connect your wallet`)
+        return
+      }
+
+      try {
+        state.contract = await this.wallet.ensureSigned(state.contract)
+        await this.wallet.mint(this.tokenId, this.price)
+        this.checkTokenStatus()
+      } catch (e) {
+        //
+      }
     }
   },
 }

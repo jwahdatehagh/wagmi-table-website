@@ -18,6 +18,4 @@ export const setOrUpdateProvider = state => {
 
   // If we have a wallet, update the provider it uses
   state.wallet?.updateProvider(state.provider)
-
-  console.log('get the signer', state.provider.getSigner())
 }
