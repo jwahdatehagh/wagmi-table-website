@@ -10,21 +10,21 @@ export default [
     id: 1,
     symbol: 'Gm',
     name: 'GM',
-    description: 'good morning',
+    description: `hey i'm here`,
     group: 'slang'
   },
   {
     id: 2,
     symbol: 'Gn',
     name: 'GN',
-    description: 'good night',
+    description: 'ok signing off',
     group: 'slang'
   },
   {
     id: 3,
     symbol: 'Dev',
     name: 'Developer',
-    description: 'the people who can do something',
+    description: 'people who can do something',
     group: 'slang'
   },
   {
@@ -45,14 +45,14 @@ export default [
     id: 6,
     symbol: 'Dh',
     name: 'Diamond Hands',
-    description: 'diamond hands never sell',
+    description: 'will never sell',
     group: 'slang'
   },
   {
     id: 7,
     symbol: 'Up',
     name: 'Up',
-    description: 'the only way is up',
+    description: 'this is the way',
     group: 'slang'
   },
   {
@@ -80,7 +80,7 @@ export default [
     id: 11,
     symbol: 'Doge',
     name: 'Dogecoin',
-    description: 'dogecoin',
+    description: 'meme coin',
     group: 'tech'
   },
   {
@@ -101,14 +101,14 @@ export default [
     id: 14,
     symbol: 'Fnd',
     name: 'Foundation',
-    description: 'you need an invitation',
+    description: 'invite only',
     group: 'tech'
   },
   {
     id: 15,
     symbol: 'Ab',
     name: 'Art Blocks',
-    description: 'art blocks',
+    description: 'important for art',
     group: 'tech'
   },
   {
@@ -143,7 +143,7 @@ export default [
     id: 20,
     symbol: 'Noob',
     name: 'Noob',
-    description: 'a new person',
+    description: 'new person',
     group: 'slang'
   },
   {
@@ -206,7 +206,7 @@ export default [
     id: 29,
     symbol: 'Dc',
     name: 'Discord',
-    description: 'a digital treehouse',
+    description: 'notification station',
     group: 'tech'
   },
   {
@@ -276,7 +276,7 @@ export default [
     id: 39,
     symbol: 'Sca',
     name: 'Scarcity',
-    description: 'a short supply',
+    description: 'short supply',
     group: 'tech'
   },
   {
@@ -409,7 +409,7 @@ export default [
     id: 58,
     symbol: 'Cp',
     name: 'Cryptopunks',
-    description: 'cryptopunk',
+    description: 'og nft',
     group: 'art'
   },
   {
@@ -430,7 +430,7 @@ export default [
     id: 61,
     symbol: 'Ph',
     name: 'Paper Hands',
-    description: 'investors that panic sell',
+    description: 'paper hands',
     group: 'slang'
   },
   {
@@ -457,7 +457,8 @@ export default [
   {
     id: 65,
     symbol: 'Mng',
-    name: 'solve for reward',
+    name: 'Mining',
+    description: 'computers problem solving',
     group: 'tech'
   },
   {
@@ -471,7 +472,7 @@ export default [
     id: 67,
     symbol: 'S',
     name: 'Seed Phrase',
-    description: 'seed phrase',
+    description: 'something never shared',
     group: 'tech'
   },
   {
@@ -486,7 +487,7 @@ export default [
     symbol: 'V',
     name: 'Value',
     description: 'worth of something',
-    group: 'market'
+    group: 'Jack'
   },
   {
     id: 70,
@@ -548,7 +549,7 @@ export default [
     id: 78,
     symbol: 'Ptp',
     name: 'Peer to Peer',
-    description: 'peer to peer',
+    description: 'third party not required',
     group: 'tech'
   },
   {
@@ -568,7 +569,7 @@ export default [
   {
     id: 82,
     symbol: 'Pow',
-    name: 'Proof Of Work',
+    name: 'Proof of Work',
     description: 'energy was spent',
     group: 'tech'
   },
@@ -576,7 +577,7 @@ export default [
     id: 81,
     symbol: 'Nft',
     name: 'Non Fungible Token',
-    description: 'not the same',
+    description: 'one of a kind',
     group: 'tech'
   },
   {
@@ -638,7 +639,7 @@ export default [
   {
     id: 91,
     symbol: 'Flp',
-    name: 'Flip',
+    name: 'Flipper',
     description: 'in it for the money',
     group: 'action'
   },
@@ -709,14 +710,14 @@ export default [
     id: 101,
     symbol: 'Lr',
     name: 'Looks Rare',
-    description: 'it looks rare',
+    description: 'normally the opposite',
     group: 'observation'
   },
   {
     id: 102,
     symbol: 'Snap',
     name: 'Snapped',
-    description: 'when someone does something cool',
+    description: 'when you do something cool',
     group: 'observation'
   },
   {
@@ -737,7 +738,7 @@ export default [
     id: 105,
     symbol: 'Nia',
     name: 'Not Investment Advice',
-    description: 'not investment advice',
+    description: `so you can't sue`,
     group: 'market'
   },
   {
@@ -765,7 +766,7 @@ export default [
     id: 109,
     symbol: 'Dpl',
     name: 'Deploy',
-    description: 'new digital building block',
+    description: 'new digital building block ',
     group: 'market'
   },
   {
@@ -780,12 +781,12 @@ export default [
     symbol: 'F',
     name: 'Floor price',
     description: 'sales start here',
-    group: 'tech'
+    group: 'market'
   },
   {
     id: 112,
     symbol: 'Cl',
-    name: 'Collecting',
+    name: 'Collector',
     description: 'in it for the art',
     group: 'action'
   },
@@ -793,7 +794,7 @@ export default [
     id: 113,
     symbol: 'In',
     name: 'Incentive',
-    description: 'it gets you going',
+    description: 'gets you going',
     group: 'action'
   },
   {
@@ -821,7 +822,7 @@ export default [
     id: 117,
     symbol: 'Vibe',
     name: 'Vibe',
-    description: 'what life is about',
+    description: 'energy',
     group: 'observation'
   },
   {
@@ -870,7 +871,7 @@ export default [
     id: 124,
     symbol: 'Few',
     name: 'Few',
-    description: 'few understand this',
+    description: 'few understand',
     group: 'observation'
   },
   {
@@ -884,7 +885,7 @@ export default [
     id: 126,
     symbol: 'Sel',
     name: 'Seems Legit',
-    description: 'looks trustworthy',
+    description: 'seems legit',
     group: 'observation'
   },
   {
@@ -905,7 +906,7 @@ export default [
     id: 129,
     symbol: 'Ps',
     name: 'PunkScape',
-    description: 'punkscape',
+    description: 'pixel places',
     group: 'art'
   },
 ]
