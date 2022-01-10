@@ -26,7 +26,7 @@
       <p class="description">{{ description }}</p>
 
       <div v-if="minted" class="links">
-        <a :href="etherscanUrl" target="_blank" class="owner btn btn-block">Owned by {{ shortOwner }}</a>
+        <a :href="etherscanUrl" target="_blank" class="owner btn btn-block">Owned by {{ ownerDisplay }}</a>
 
         <a
           :href="openSeaUrl"

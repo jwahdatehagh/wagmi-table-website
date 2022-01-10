@@ -16,10 +16,10 @@ export default class Wallet extends BaseWallet {
 
   async mint (tokenId, value) {
     try {
-      this.minting = true
+      this.state.minting = true
       const transaction = await this.wagmiContract.mint(tokenId, this.state.address, { value })
       await transaction.wait()
-      this.minting = false
+      this.state.minting = false
     } catch (e) {
       this.handleTransactionError(e)
     }
