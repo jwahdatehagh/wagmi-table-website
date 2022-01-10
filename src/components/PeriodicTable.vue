@@ -15,7 +15,7 @@
 import NFT from './NFT.vue'
 import nfts from './../store/nfts'
 
-const tableNFTs = nfts.slice(1)
+const tableNFTs = nfts.slice(1, 129)
 </script>
 
 <style lang="postcss" scoped>
@@ -53,10 +53,10 @@ const tableNFTs = nfts.slice(1)
   }
 
   @media (--xl) {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(14, minmax(0, 1fr));
 
     > *:nth-child(2) {
-      grid-column: 12;
+      grid-column: 14;
     }
   }
 
