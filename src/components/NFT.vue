@@ -25,31 +25,33 @@
       </h1>
       <p class="description">{{ description }}</p>
 
-      <div v-if="minted" class="links">
-        <a :href="etherscanUrl" target="_blank" class="owner btn btn-block">Owned by {{ ownerDisplay }}</a>
+      <Loading v-if="loading" />
+      <template v-else>
+        <div v-if="minted" class="links">
+          <a :href="etherscanUrl" target="_blank" class="owner btn btn-block">Owned by {{ ownerDisplay }}</a>
 
-        <a
-          :href="openSeaUrl"
-          target="_blank"
-          class="opensea btn btn-block"
-        >View on OpenSea</a>
-      </div>
-      <p v-else class="price">{{ priceInETH }} Ξ</p>
+          <a
+            :href="openSeaUrl"
+            target="_blank"
+            class="opensea btn btn-block"
+          >View on OpenSea</a>
+        </div>
+        <p v-else class="price">{{ priceInETH }} Ξ</p>
 
-      <button
-        v-if="! minting && ! minted"
-        @click="mint"
-        class="btn btn-primary btn-block"
-      >Mint</button>
-      <button
-        v-else-if="minting"
-        class="btn btn-primary btn-block"
-        disabled
-      >Minting</button>
-      <p v-if="! saleStarted && ! minted" class="sale-start">
-        Sale starts {{ saleStart }}
-      </p>
-
+        <button
+          v-if="! minting && ! minted"
+          @click="mint"
+          class="btn btn-primary btn-block"
+        >Mint</button>
+        <button
+          v-else-if="minting"
+          class="btn btn-primary btn-block"
+          disabled
+        >Minting</button>
+        <p v-if="! saleStarted && ! minted" class="sale-start">
+          Sale starts {{ saleStart }}
+        </p>
+      </template>
     </div>
   </Modal>
 </div>
@@ -61,12 +63,14 @@ import { VueFinalModal } from 'vue-final-modal'
 import { checkENS } from '../helpers/ens'
 import shortAddress from '../helpers/short-address'
 import { state, saleStarted } from './../store'
+import Loading from './Loading.vue'
 
 const DEFAULT_PRICE = ethers.utils.parseEther('0.2')
 
 export default {
   components: {
     Modal: VueFinalModal,
+    Loading,
   },
 
   props: {
@@ -79,6 +83,7 @@ export default {
   data () {
     return {
       showDetail: false,
+      loading: true,
       owner: null,
       ownerEns: null,
       minted: null,
@@ -118,17 +123,19 @@ export default {
     },
 
     async checkTokenStatus () {
+      this.loading = true
       try {
         this.owner = await state.contract.ownerOf(this.tokenId)
         this.ownerEns = await checkENS(this.owner)
         this.minted = true
       } catch (e) {
-        this.owner = 0
+        this.owner = null
         this.minted = false
 
         const price = await state.contract.priceForToken(this.tokenId)
         this.price = price > 0 ? price : DEFAULT_PRICE
       }
+      this.loading = false
     },
 
     async mint () {
