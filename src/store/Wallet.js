@@ -19,9 +19,9 @@ export default class Wallet extends BaseWallet {
       this.state.minting = true
       const transaction = await this.wagmiContract.mint(tokenId, this.state.address, { value })
       await transaction.wait()
-      this.state.minting = false
     } catch (e) {
       this.handleTransactionError(e)
     }
+    this.state.minting = false
   }
 }
