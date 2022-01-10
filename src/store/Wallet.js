@@ -1,4 +1,3 @@
-import { ethers } from 'ethers'
 import BaseWallet from './../helpers/Wallet'
 
 const state = {

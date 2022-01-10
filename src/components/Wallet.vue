@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { checkAndNotifyChain } from '../helpers/chains'
 import { state } from './../store'
 
 export default {
@@ -30,6 +31,13 @@ export default {
 
   methods: {
     async connect () {
+      if (! state.wallet.ethereumInjected) {
+        alert('Please set up MetaMask to connect to the site')
+        return
+      }
+
+      checkAndNotifyChain()
+
       console.log('Trying to connect', state.wallet)
       await state.wallet.connect()
     }
