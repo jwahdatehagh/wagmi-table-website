@@ -567,17 +567,17 @@ export default [
     group: 'tech'
   },
   {
-    id: 82,
-    symbol: 'Pow',
-    name: 'Proof of Work',
-    description: 'energy was spent',
-    group: 'tech'
-  },
-  {
     id: 81,
     symbol: 'Nft',
     name: 'Non Fungible Token',
     description: 'one of a kind',
+    group: 'tech'
+  },
+  {
+    id: 82,
+    symbol: 'Pow',
+    name: 'Proof of Work',
+    description: 'energy was spent',
     group: 'tech'
   },
   {
