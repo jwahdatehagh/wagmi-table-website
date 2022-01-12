@@ -98,7 +98,8 @@ export default {
     minting () { return this.wallet?.state.minting },
 
     // Token state
-    saleStart () { return (new Date(state.saleStart * 1000)).toLocaleString() },
+    saleStartDate () { return new Date(state.saleStart * 1000) },
+    saleStart () { return this.saleStartDate.toLocaleString() },
     saleStarted () { return saleStarted() },
     priceInETH () { return ethers.utils.formatEther(this.price) },
     shortOwner () { return this.owner && shortAddress(this.owner) },
@@ -139,6 +140,11 @@ export default {
     },
 
     async mint () {
+      if (this.saleStartDate > new Date()) {
+        alert(`Sale hasn't started yet`)
+        return
+      }
+
       if (! this.wallet?.state.connected) {
         alert(`Please connect your wallet`)
         return
