@@ -1,4 +1,6 @@
-export default [
+import { fetchTokens } from '../api'
+
+const nfts = [
   {
     id: 0,
     symbol: 'Wagmi',
@@ -910,3 +912,12 @@ export default [
     group: 'art'
   },
 ]
+
+export const fetchMinted = async () => {
+  const minted = await fetchTokens()
+  const mintedIds = minted.map(n => parseInt(n.tokenID))
+
+  return nfts.filter(n => mintedIds.includes(n.id))
+}
+
+export default nfts

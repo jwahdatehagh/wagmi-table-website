@@ -9,6 +9,7 @@
   text-align: center;
 
   &.btn-primary,
+  &.active,
   &:--highlight {
     background-color: black;
     border-color: black;

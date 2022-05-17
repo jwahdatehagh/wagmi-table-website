@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="listing">
+  <div class="listing" :class="{ exists }">
     <article @click="open">
       <img :src="`/images/${tokenId}@sm.png`" :alt="`#${tokenId} ${name}`">
     </article>
@@ -78,6 +78,7 @@ export default {
     name: String,
     description: String,
     group: String,
+    exists: Boolean,
   },
 
   data () {
@@ -168,6 +169,8 @@ export default {
     width: 100%;
     padding-bottom: 100%;
     position: relative;
+
+    transition: all var(--speed);
   }
 
   img {

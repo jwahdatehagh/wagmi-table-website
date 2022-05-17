@@ -8,7 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@urql/core": "^2.4.4",
     "ethers": "^5.5.3",
+    "graphql": "^16.5.0",
     "postcss-mixins": "^8.1.0",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^6.7.0",
