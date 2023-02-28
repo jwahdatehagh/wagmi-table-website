@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <!-- <nav>
     <button
       @click="filter = filter === 'minted' ? '' : 'minted'"
       class="btn"
@@ -10,7 +10,7 @@
       class="btn"
       :class="{ active: filter === 'available' }"
     >Available</button>
-  </nav>
+  </nav> -->
 
   <div class="periodic-table" :class="[ filter ]">
     <NFT

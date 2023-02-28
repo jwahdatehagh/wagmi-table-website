@@ -26,7 +26,7 @@ export const fetchOverview = async () => {
 
 export const fetchTokens = async () => {
   const query = `{
-    tokens (where: {contract:"${contract}"}) {
+    tokens (where: {contract:"${contract}"}, first: 130) {
       tokenID
       owner {
         id
